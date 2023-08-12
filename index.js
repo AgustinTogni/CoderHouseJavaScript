@@ -1,6 +1,6 @@
 // Creacion de funciones
-function multiplicador(variable1, variable2) {
-    const operacion = variable1 * variable2;
+function multiplicador(tipoDeCambio, cantidadDivisa) {
+    const operacion = tipoDeCambio * cantidadDivisa;
     return operacion;
 }
 
