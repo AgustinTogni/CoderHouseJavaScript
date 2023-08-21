@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200&display=swap" rel="stylesheet">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -103,7 +105,7 @@
 
         </section>
 
-        <section class="aprende">
+        <section data-aos="fade-up" data-aos-duration="2000" class="aprende">
 
             <div class="aprende__div">
                 <h1>Aprende mas del mundo financiero y hace crecer tu dinero!</h1>
@@ -114,10 +116,10 @@
 
         <section id="conversor" class="conversor">
 
-            <h2>Conversor de Divisas</h2>
-            <h3>Converti divisas con facilidad, y toma buenas y rapidas desiciones!</h3>
+            <h2 data-aos="fade-down" data-aos-duration="2000">Conversor de Divisas</h2>
+            <h3 data-aos="fade-down" data-aos-duration="2000">Converti divisas con facilidad, y toma buenas y rapidas desiciones!</h3>
 
-            <form class="conversor__form">
+            <form data-aos="fade-up" data-aos-duration="2000" class="conversor__form">
                 <input class="conversor__input" type="text" placeholder="Ingresa la cantidad a convertir!">
                 <div class="conversor__submit">
                     <input type="submit" value="Dolar">
@@ -155,18 +157,20 @@
 
         <section id="cursos" class="cursos">
 
-            <div class="cursos__titulos">
+            <div data-aos="fade-down" data-aos-duration="2000" class="cursos__titulos">
                 <h2>Empeza a aprender!</h2>
                 <h3>Toma cualquiera de nuestros cursos en YouTube totalmente gratis!</h3>
             </div>
 
-            <div class="cursos__div">
+            <div data-aos="fade-up" data-aos-duration="500" class="cursos__div">
                 <div class="cursos__tarjetas card" style="width: 18rem;">
                     <img src="./img/aprende-trading.jpg" class="card-img-top" alt="...">
                     <div class="cursos__contenido card-body">
                         <h5 class="card-title">Aprende Trading</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad porro magnam quibusdam culpa
-                            accusamus ipsam illo rem at, dolor labore commodi doloribus voluptate facere minima itaque quos
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad porro
+                            magnam quibusdam culpa
+                            accusamus ipsam illo rem at, dolor labore commodi doloribus voluptate facere minima itaque
+                            quos
                             voluptatem beatae.</p>
                         <a href="#" class="btn btn-primary">Aprende!</a>
                     </div>
@@ -175,8 +179,10 @@
                     <img src="./img/todo-sobre-divisas.jpg" class="card-img-top" alt="...">
                     <div class="cursos__contenido card-body">
                         <h5 class="card-title">Todo sobre Divisas</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad porro magnam quibusdam culpa
-                            accusamus ipsam illo rem at, dolor labore commodi doloribus voluptate facere minima itaque quos
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad porro
+                            magnam quibusdam culpa
+                            accusamus ipsam illo rem at, dolor labore commodi doloribus voluptate facere minima itaque
+                            quos
                             voluptatem beatae.</p>
                         <a href="#" class="btn btn-primary">Aprende!</a>
                     </div>
@@ -185,8 +191,10 @@
                     <img src="./img/aprende-leer-graficas.jpg" class="card-img-top" alt="...">
                     <div class="cursos__contenido card-body">
                         <h5 class="card-title">Aprende a Leer Graficas</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad porro magnam quibusdam culpa
-                            accusamus ipsam illo rem at, dolor labore commodi doloribus voluptate facere minima itaque quos
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ad porro
+                            magnam quibusdam culpa
+                            accusamus ipsam illo rem at, dolor labore commodi doloribus voluptate facere minima itaque
+                            quos
                             voluptatem beatae.</p>
                         <a href="#" class="btn btn-primary">Aprende!</a>
                     </div>
@@ -215,6 +223,10 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
