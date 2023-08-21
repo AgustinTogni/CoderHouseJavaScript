@@ -6,7 +6,11 @@
     font-family: 'Albert Sans', sans-serif;
 }
 
-/* ----- nav ----- */
+/* ----- Header ----- */
+
+header {
+    box-shadow: 1px 1px 20px 5px rgb(146, 146, 146);
+}
 
 .nav div {
     margin: 0px 40px 0px 40px;
@@ -118,8 +122,88 @@ a {
     align-items: center;
 }
 
-.cursos__contenido p{
+.cursos__contenido p {
     text-align: center;
+}
+
+/* ----- Main Login ----- */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 400px;
+    padding: 50px;
+    margin: 140px auto 140px;
+
+    border-radius: 30px;
+    box-shadow: 1px 1px 20px 5px rgb(146, 146, 146);
+}
+
+.form h1 {
+    font-size: 3.5rem;
+}
+
+.form h2 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border-color: rgb(13, 71, 218);
+}
+
+.form__submit {
+    padding: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    border-color: rgb(13, 71, 218);
+}
+
+.form__submit:hover {
+    background-color: rgb(13, 71, 218);
+    color: white;
+    transition: 1s;
+}
+
+.form h3 {
+    font-size: 0.813rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form a {
+    color: rgb(13, 71, 218);
+}
+
+/* ----- Main Register ----- */
+
+.form__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.form__input--register {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border-color: rgb(13, 71, 218);
+
+    font-size: 0.813rem;
 }
 
 /* ----- Footer ----- */
@@ -142,6 +226,8 @@ a {
 
 .footer h3 {
     font-size: 0.813rem;
+    width: 232px;
+    text-align: center;
 }
 
 .footer__contacto i {
