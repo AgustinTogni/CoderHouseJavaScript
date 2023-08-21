@@ -1,0 +1,155 @@
+/* ----- var ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Albert Sans', sans-serif;
+}
+
+/* ----- nav ----- */
+
+.nav div {
+    margin: 0px 40px 0px 40px;
+}
+
+.nav__img {
+    width: 95px;
+    height: 100px;
+}
+
+.nav__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+ul,
+li {
+    list-style: none;
+    font-size: 1.25rem;
+    gap: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav__lista a:hover {
+    color: rgb(13, 71, 218);
+    transition: 0.5s;
+}
+
+/* ----- main index ----- */
+
+.carrusel__img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.aprende {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin: 40px 0px 40px 0px;
+}
+
+.aprende__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.aprende__div h1 {
+    font-size: 3.5rem;
+    width: 40%;
+}
+
+.aprende__div img {
+    width: 600px;
+    height: 450px;
+}
+
+/* ----- ----- */
+
+.cursos__titulos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursos h2 {
+    font-size: 2rem;
+    margin: 20px;
+}
+
+.cursos h3 {
+    font-size: 1.5rem;
+    margin: 0px 20px 10px 20px;
+}
+
+.cursos__article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursos__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursos__tarjetas {
+    margin: 40px;
+}
+
+.cursos__contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cursos__contenido p{
+    text-align: center;
+}
+
+/* ----- Footer ----- */
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0px 75px 0px 75px;
+    margin-top: 40px;
+    box-shadow: -5px -5px 20px 5px rgb(146, 146, 146);
+}
+
+.footer img {
+    width: 200px;
+    height: 200px;
+}
+
+.footer h3 {
+    font-size: 0.813rem;
+}
+
+.footer__contacto i {
+    padding: 20px;
+    font-size: 2.25rem;
+}
+
+.footer__contacto i:hover {
+    color: rgb(13, 71, 218);
+    transition: 1s;
+}
