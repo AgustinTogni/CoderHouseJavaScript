@@ -45,7 +45,7 @@ a {
     transition: 0.5s;
 }
 
-/* ----- main index ----- */
+/* ----- Main index ----- */
 
 .carrusel__img {
     height: 500px;
@@ -78,13 +78,85 @@ a {
     height: 450px;
 }
 
-/* ----- ----- */
-
-.cursos__titulos {
+.conversor {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.conversor h2 {
+    font-size: 2rem;
+    margin: 20px;
+}
+
+.conversor h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.conversor__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 400px;
+    padding: 50px;
+    margin-bottom: 50px;
+
+    border-radius: 30px;
+    box-shadow: 1px 1px 20px 5px rgb(146, 146, 146);
+}
+
+.conversor__input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border-color: rgb(13, 71, 218);
+}
+
+.conversor__submit input {
+    padding: 8px 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    border-color: rgb(13, 71, 218);
+}
+
+.conversor__submit input:hover {
+    background-color: rgb(13, 71, 218);
+    color: white;
+    transition: 1s;
+}
+
+.conversor__divisas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80%;
+    margin: 12px 0px 12px 0px;
+}
+
+.conversor__form h4 {
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.conversor__form h5 {
+    text-align: center;
+    font-size: 0.813rem;
+}
+
+.cursos__titulos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .cursos h2 {
