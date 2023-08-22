@@ -10,4 +10,6 @@ Este proyecto se desarrolla como trabajo final del curso "JavaScript" de CoderHo
 
 - Visual Studio Code
 	- HTML
+   	- CSS
+   	- Flexbox
 	- JavaScript
