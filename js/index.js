@@ -8,6 +8,25 @@ function validarDivisa(divisa) {
     return divisa === 'Dolar' || divisa === 'Euro' || divisa === 'Yuan';
 }
 
+function validarRespuesta(respuesta) {
+    return respuesta === 'si' || respuesta === 'no';
+}
+
+// Cracion de clases.
+class Divisas {
+    constructor(nombre, valor) {
+        this.nombre = nombre;
+        this.valor = valor;
+    }
+}
+
+// Se crea el array junto a las divisas.
+const divisas = [
+    new Divisas('Dolar', 605),
+    new Divisas('Euro', 315),
+    new Divisas('Yuan', 40)
+];
+
 // -------------------------------------------------------------------------------
 
 alert('Bienvenido a tu conversor de confianza!');
@@ -25,7 +44,7 @@ let cantidadDivisa = parseFloat(prompt('Que cantidad quieres convertir?'));
 
 // Se verifica que la cantidad sea valida.
 while (isNaN(cantidadDivisa)) {
-    cantidadDivisa = parseFloat(prompt('La cantidad ingresada no es valida. Por favor, ingresa  cantidad quieres convertir'));
+    cantidadDivisa = parseFloat(prompt('La cantidad ingresada no es valida. Por favor, ingresa cantidad quieres convertir'));
 }
 
 // Se crea la variable del tipo de cambio.
@@ -38,8 +57,6 @@ if (divisa === 'Dolar') {
     tipoDeCambio = 315;
 } else if (divisa === 'Yuan') {
     tipoDeCambio = 40;
-} else {
-    alert('Solo podemos convertir Dolar, Euro o Yuan en este momento.');
 }
 
 // Se devuelve el resultado.
@@ -48,7 +65,23 @@ if (divisa !== 0) {
     alert(`El resultado de la conversión es: ${resultado}`);
 }
 
-alert('Gracias, vuelva pronto!');
+// Se pregunta que quiere realizar el usuario.
+let respuesta = prompt('¿Quieres saber el precio de todas las divisas que tenemos? si/no');
+
+// Se verifica que la respuesta del usuario esté dentro de los parámetros esperados.
+while (!validarRespuesta(respuesta)) {
+    respuesta = prompt('La respuesta ingresada no es válida, por favor, ingresa si o no.');
+}
+
+// En caso de que el usuario haya dado como respuesta si, se devuelven los valores de las divisas.
+if (respuesta === 'si') {
+    // Se muestran las divisas.
+    for (const divisa of divisas) {
+        alert(`El ${divisa.nombre} tiene un valor de ${divisa.valor} pesos por unidad.`);
+    }
+} else {
+    alert('¡Gracias, vuelva pronto!');
+}
 
 
 
