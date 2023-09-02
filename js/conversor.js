@@ -74,6 +74,14 @@ submitDolar.addEventListener('click', (event) => {
     // Se reemplaza la aclaracion de paridad.
     paridad.innerHTML = 'USD - ARS'
 
+    // Se reemplazan los dolares por las nuevas divisas.
+    divisaDolarOficial.innerHTML = 'Oficial'
+    divisaDolarBlue.innerHTML = 'Blue'
+    divisaDolarTarjeta.innerHTML = 'Tarjeta'
+    divisaDolarCCL.innerHTML = 'CCL'
+    divisaDolarMEP.innerHTML = 'MEP'
+    divisaDolarMayorista.innerHTML = 'Mayorista'
+
     // Se toma el valor ingresado en "inputCantidad" y se convierte en un número.
     const cantidad = parseFloat(inputCantidad.value);
 
