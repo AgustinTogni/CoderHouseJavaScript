@@ -18,8 +18,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-    <script src="./js/index.js"></script>
-
     <link rel="stylesheet" href="css/styles.css">
 
     <title>Toba Grupo Financiero | Inicio</title>
@@ -119,36 +117,40 @@
             <h2 data-aos="fade-down" data-aos-duration="2000">Conversor de Divisas</h2>
             <h3 data-aos="fade-down" data-aos-duration="2000">Converti divisas con facilidad, y toma buenas y rapidas desiciones!</h3>
 
-            <form data-aos="fade-up" data-aos-duration="2000" class="conversor__form">
-                <input class="conversor__input" type="text" placeholder="Ingresa la cantidad a convertir!">
+            <form id="form" data-aos="fade-up" data-aos-duration="2000" class="conversor__form">
+                <input id="inputCantidad" class="conversor__input" type="number" placeholder="Ingresa la cantidad a convertir!">
                 <div class="conversor__submit">
-                    <input type="submit" value="Dolar">
-                    <input type="submit" value="+Divisas">
-                    <input type="submit" value="Peso">
+                    <input id="submitDolar" type="submit" value="Dolar">
+                    <input id="submitDivisas" type="submit" value="+Divisas">
+                    <input id="submitPeso" type="submit" value="Peso">
+                </div>
+                <div>
+                    <h5 id="paridad">USD - ARS</h5>
+                    <p id="alertaCompleta"></p>
                 </div>
                 <div class="conversor__divisas">
-                    <h4>Oficial</h4>
-                    <h4>$9.999,00</h4>
+                    <h4 id="divisaDolarOficial">Oficial</h4>
+                    <h4 id="valorDolarOficial">$0,00</h4>
                 </div>
                 <div class="conversor__divisas">
-                    <h4>Blue</h4>
-                    <h4>$9.999,00</h4>
+                    <h4 id="divisaDolarBlue">Blue</h4>
+                    <h4 id="valorDolarBlue">$0,00</h4>
                 </div>
                 <div class="conversor__divisas">
-                    <h4>Tarjeta</h4>
-                    <h4>$9.999,00</h4>
+                    <h4 id="divisaDolarTarjeta">Tarjeta</h4>
+                    <h4 id="valorDolarTarjeta">$0,00</h4>
                 </div>
                 <div class="conversor__divisas">
-                    <h4>CCL</h4>
-                    <h4>$9.999,00</h4>
+                    <h4 id="divisaDolarCCL">CCL</h4>
+                    <h4 id="valorDolarCCL">$0,00</h4>
                 </div>
                 <div class="conversor__divisas">
-                    <h4>MEP</h4>
-                    <h4>$9.999,00</h4>
+                    <h4 id="divisaDolarMEP">MEP</h4>
+                    <h4 id="valorDolarMEP">$0,00</h4>
                 </div>
                 <div class="conversor__divisas">
-                    <h4>Mayorista</h4>
-                    <h4>$9.999,00</h4>
+                    <h4 id="divisaDolarMayorista">Mayorista</h4>
+                    <h4 id="valorDolarMayorista">$0,00</h4>
                 </div>
                 <h5>El precio mostrado es un promedio entre la compra y la venta.</h5>
             </form>
@@ -227,6 +229,8 @@
     <script>
         AOS.init();
     </script>
+
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

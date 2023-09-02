@@ -143,6 +143,11 @@ a {
     margin: 12px 0px 12px 0px;
 }
 
+#alertaCompleta {
+    color: red;
+    text-align: center;
+}
+
 .conversor__form h4 {
     text-align: center;
     font-size: 1.125rem;
