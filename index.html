@@ -20,8 +20,6 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
-    <script src="./js/index.js"></script>
-
     <title>Toba Grupo Financiero | Inicio</title>
 </head>
 
@@ -47,7 +45,7 @@
                             <a class="nav-link" href="#cursos">Cursos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./pages/login.html">Iniciar Sesion</a>
+                            <a id="navLogin" class="nav-link" href="./pages/login.html">Iniciar Sesion</a>
                         </li>
                     </ul>
                 </div>
@@ -119,7 +117,7 @@
             <h2 data-aos="fade-down" data-aos-duration="2000">Conversor de Divisas</h2>
             <h3 data-aos="fade-down" data-aos-duration="2000">Converti divisas con facilidad, y toma buenas y rapidas desiciones!</h3>
 
-            <form id="form" data-aos="fade-up" data-aos-duration="2000" class="conversor__form">
+            <form id="formConversor" data-aos="fade-up" data-aos-duration="2000" class="conversor__form">
                 <input id="inputCantidad" class="conversor__input" type="number" placeholder="Ingresa la cantidad a convertir!">
                 <div class="conversor__submit">
                     <input id="submitDolar" type="submit" value="Dolar">
@@ -128,7 +126,7 @@
                 </div>
                 <div>
                     <h5 id="paridad">USD - ARS</h5>
-                    <p id="alertaCompleta"></p>
+                    <p id="alertaCompleta" class="alertas"></p>
                 </div>
                 <div class="conversor__divisas">
                     <h4 id="divisaDolarOficial">Oficial</h4>
@@ -231,6 +229,8 @@
     <script>
         AOS.init();
     </script>
+
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

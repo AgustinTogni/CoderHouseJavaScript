@@ -45,7 +45,7 @@
                             <a class="nav-link" href="../index.html#cursos">Cursos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./register.html">Registrarse</a>
+                            <a id="navRegister" class="nav-link" href="./register.html">Registrarse</a>
                         </li>
                     </ul>
                 </div>
@@ -55,13 +55,13 @@
 
     <main>
 
-        <form data-aos="zoom-in" data-aos-duration="2000" class="form">
+        <form id="formLogin" data-aos="zoom-in" data-aos-duration="2000" class="form">
             <h1>Ingresa!</h1>
             <h2>Ingresa a tu cuenta y dizfruta de todo al maximo!</h2>
-            <input class="form__input" type="email" placeholder="Ingresa tu mail">
-            <input class="form__input" type="password" placeholder="Ingresa tu contraseña">
+            <input id="inputTuMail" class="form__input" type="email" placeholder="Ingresa tu mail">
+            <input id="inputTuPassword" class="form__input" type="password" placeholder="Ingresa tu contraseña">
             <input class="form__submit" type="submit" value="Ingresar!">
-            <h3>No tenes cuenta? Hace <a href="./register.html">click aca</a> y registrate!</h3>
+            <h3 id="textoRegistrate">No tenes cuenta? Hace <a href="./register.html">click aca</a> y registrate!</h3>
         </form>
 
     </main>
@@ -88,6 +88,8 @@
     <script>
         AOS.init();
     </script>
+
+    <script src="../js/login.js"></script>
 </body>
 
 </html>
