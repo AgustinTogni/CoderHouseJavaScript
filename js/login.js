@@ -54,13 +54,5 @@ formLogin.addEventListener('submit', (event) => {
     }
 });
 
-if (usuarioGuardado !== null) {
-    // Establece el contenido de navLogin con el nombre y apellido del usuario
-    navLogin.innerHTML = `${usuarioGuardado.nombre} ${usuarioGuardado.apellido}`;
-} else {
-    navLogin.innerHTML = 'Iniciar Sesión';
-}
-
-
 
 
