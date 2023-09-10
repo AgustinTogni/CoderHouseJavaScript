@@ -1,3 +1,7 @@
+
+// CODIGO UTILIZADO HASTA LA SEGUNDA PRE-ENTREGA.
+// EN ESTE MOMENTO NO TIENE USO NI ESTA SIENDO EJECUTADO.
+
 // Creacion de funciones
 function multiplicador(tipoDeCambio, cantidadDivisa) {
     const operacion = tipoDeCambio * cantidadDivisa;
