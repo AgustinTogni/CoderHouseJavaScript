@@ -6,7 +6,7 @@ class Divisas {
     }
 }
 
-// Se crea el array con las divisas.
+// Se crean los arrays con las divisas.
 const dolares = [
     new Divisas('Oficial', 357),
     new Divisas('Blue', 725),
@@ -17,13 +17,13 @@ const dolares = [
 ]
 
 const divisas = [
-    new Divisas('Euro', 377),
-    new Divisas('Real', 71),
-    new Divisas('Yuan', 48),
-    new Divisas('Libra', 440),
-    new Divisas('Franco', 395),
-    new Divisas('Yen', 2.4),
-]
+    new Divisas('ARS', null),
+    new Divisas('BRL', null),
+    new Divisas('CNY', null),
+    new Divisas('GBP', null),
+    new Divisas('CHF', null),
+    new Divisas('JPY', null),
+];
 
 // Se declaran los componentes del conversor.
 const navLogin = document.querySelector('#navLogin')
@@ -51,6 +51,35 @@ const valorDolarTarjeta = document.querySelector('#valorDolarTarjeta')
 const valorDolarCCL = document.querySelector('#valorDolarCCL')
 const valorDolarMEP = document.querySelector('#valorDolarMEP')
 const valorDolarMayorista = document.querySelector('#valorDolarMayorista')
+
+// SE REALIZO CON EURO COMO MONEDA BASE POR RESTRICCION DE LICENCIA GRATUITA (NO PERMITIA ARS).
+// Se declara una funcion para obtener las tasas de cambio de la API.
+function obtenerTasasDeCambio() {
+    const apiKey = '768e5add5e1ae0d8f01f7c7741f1ad51';
+    const baseCurrency = 'EUR'; // Moneda base 
+
+    // Se crea una lista de nombres de divisas para la URL.
+    const divisasNombres = divisas.map(divisa => divisa.nombre);
+
+    const apiUrl = `http://data.fixer.io/api/latest?base=${baseCurrency}&symbols=${divisasNombres.join(',')}&access_key=${apiKey}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const rates = data.rates;
+            for (const divisa of divisas) {
+                if (rates.hasOwnProperty(divisa.nombre)) {
+                    divisa.paridad = rates[divisa.nombre];
+                }
+            }
+        })
+        .catch(error => {
+            console.log('Error al obtener tasas de cambio:', error);
+        });
+}
+
+// Se llama a la función para obtener las tasas de cambio.
+obtenerTasasDeCambio();
 
 // Se declara una funcion para darle el formato requerido a los resultados.
 function formatearNumero(numero) {
@@ -98,7 +127,7 @@ submitDolar.addEventListener('click', (event) => {
     // Se reemplaza la aclaracion de paridad.
     paridad.innerHTML = 'USD - ARS'
 
-    // Se reemplazan los dolares por las nuevas divisas.
+    // Se reemplazan las nuevas divisas.
     divisaDolarOficial.innerHTML = 'Oficial'
     divisaDolarBlue.innerHTML = 'Blue'
     divisaDolarTarjeta.innerHTML = 'Tarjeta'
@@ -112,6 +141,10 @@ submitDolar.addEventListener('click', (event) => {
     // Se recorre el array de los dolares y se realiza el calculo.
     if (!isNaN(cantidad)) {
         if (cantidad !== 0) {
+            for (const dolar of dolares) {
+                resultadosDolares[dolar.nombre] = cantidad * dolar.valor;
+                alertaCompleta.innerHTML = '';
+            }
             // Alerta de conversion exitosa.
             Toastify({
                 text: "Conversion Exitosa",
@@ -123,10 +156,6 @@ submitDolar.addEventListener('click', (event) => {
                     background: "linear-gradient(to right, #090979, #00d4ff)",
                 }
             }).showToast();
-            for (const dolar of dolares) {
-                resultadosDolares[dolar.nombre] = cantidad * dolar.valor;
-                alertaCompleta.innerHTML = '';
-            }
         } else {
             // Muestra una alerta si el valor es 0.
             alertaCompleta.innerHTML = 'El valor no puede ser 0.';
@@ -155,7 +184,7 @@ submitDolar.addEventListener('click', (event) => {
     valorDolarMayorista.innerHTML = '$' + formatearNumero(resultadosDolares['Mayorista']);
 })
 
-// ---------------------------- Pesos a divisas ----------------------------
+// ---------------------------- Euros a divisas ----------------------------
 
 // Se declara un objeto para almacenar los resultados de las divisas.
 const resultadosDivisas = {};
@@ -166,10 +195,10 @@ submitDivisas.addEventListener('click', (event) => {
     event.preventDefault();
 
     // Se reemplaza la aclaracion de paridad.
-    paridad.innerHTML = 'DVS - ARS'
+    paridad.innerHTML = 'EUR - DVS'
 
-    // Se reemplazan los dolares por las nuevas divisas.
-    divisaDolarOficial.innerHTML = 'Euro'
+    // Se reemplazan las nuevas divisas.
+    divisaDolarOficial.innerHTML = 'Pesos'
     divisaDolarBlue.innerHTML = 'Real'
     divisaDolarTarjeta.innerHTML = 'Yuan'
     divisaDolarCCL.innerHTML = 'Libra'
@@ -182,6 +211,10 @@ submitDivisas.addEventListener('click', (event) => {
     // Se recorre el array de las divisas y se realiza el calculo.
     if (!isNaN(cantidad)) {
         if (cantidad !== 0) {
+            for (const divisa of divisas) {
+                resultadosDivisas[divisa.nombre] = cantidad * divisa.paridad;
+                alertaCompleta.innerHTML = '';
+            }
             // Alerta de conversion exitosa.
             Toastify({
                 text: "Conversion Exitosa",
@@ -193,16 +226,12 @@ submitDivisas.addEventListener('click', (event) => {
                     background: "linear-gradient(to right, #090979, #00d4ff)",
                 }
             }).showToast();
-            for (const divisa of divisas) {
-                resultadosDivisas[divisa.nombre] = cantidad * divisa.valor;
-                alertaCompleta.innerHTML = '';
-            }
         } else {
             // Muestra una alerta si el valor es 0.
             alertaCompleta.innerHTML = 'El valor no puede ser 0.';
 
             // Establece los resultados en 0.
-            for (const divisa of divisa) {
+            for (const divisa of divisas) {
                 resultadosDivisas[divisa.nombre] = 0;
             }
         }
@@ -211,18 +240,18 @@ submitDivisas.addEventListener('click', (event) => {
         alertaCompleta.innerHTML = 'Completa el campo con un valor numérico.';
 
         // Establece los resultados en 0.
-        for (const divisa of divisa) {
+        for (const divisa of divisas) {
             resultadosDivisas[divisa.nombre] = 0;
         }
     }
 
     // Se formatean los resultados con puntos como separadores de miles.
-    valorDolarOficial.innerHTML = '$' + formatearNumero(resultadosDivisas['Euro']);
-    valorDolarBlue.innerHTML = '$' + formatearNumero(resultadosDivisas['Real']);
-    valorDolarTarjeta.innerHTML = '$' + formatearNumero(resultadosDivisas['Yuan']);
-    valorDolarCCL.innerHTML = '$' + formatearNumero(resultadosDivisas['Libra']);
-    valorDolarMEP.innerHTML = '$' + formatearNumero(resultadosDivisas['Franco']);
-    valorDolarMayorista.innerHTML = '$' + formatearNumero(resultadosDivisas['Yen']);
+    valorDolarOficial.innerHTML = '$' + formatearNumero(resultadosDivisas['ARS']);
+    valorDolarBlue.innerHTML = '$' + formatearNumero(resultadosDivisas['BRL']);
+    valorDolarTarjeta.innerHTML = '$' + formatearNumero(resultadosDivisas['CNY']);
+    valorDolarCCL.innerHTML = '$' + formatearNumero(resultadosDivisas['GBP']);
+    valorDolarMEP.innerHTML = '$' + formatearNumero(resultadosDivisas['CHF']);
+    valorDolarMayorista.innerHTML = '$' + formatearNumero(resultadosDivisas['JPY']);
 })
 
 // ---------------------------- Pesos a dolares ----------------------------
@@ -238,7 +267,7 @@ submitPeso.addEventListener('click', (event) => {
     // Se reemplaza la aclaracion de paridad.
     paridad.innerHTML = 'ARS - USD'
 
-    // Se reemplazan los dolares por las nuevas divisas.
+    // Se reemplazan las nuevas divisas.
     divisaDolarOficial.innerHTML = 'Oficial'
     divisaDolarBlue.innerHTML = 'Blue'
     divisaDolarTarjeta.innerHTML = 'Tarjeta'
@@ -252,6 +281,10 @@ submitPeso.addEventListener('click', (event) => {
     // Se recorre el array de los dolares y se realiza el calculo.
     if (!isNaN(cantidad)) {
         if (cantidad !== 0) {
+            for (const dolar of dolares) {
+                resultadosPesos[dolar.nombre] = cantidad / dolar.valor;
+                alertaCompleta.innerHTML = '';
+            }
             // Alerta de conversion exitosa.
             Toastify({
                 text: "Conversion Exitosa",
@@ -263,10 +296,6 @@ submitPeso.addEventListener('click', (event) => {
                     background: "linear-gradient(to right, #090979, #00d4ff)",
                 }
             }).showToast();
-            for (const dolar of dolares) {
-                resultadosPesos[dolar.nombre] = cantidad / dolar.valor;
-                alertaCompleta.innerHTML = '';
-            }
         } else {
             // Muestra una alerta si el valor es 0.
             alertaCompleta.innerHTML = 'El valor no puede ser 0.';
