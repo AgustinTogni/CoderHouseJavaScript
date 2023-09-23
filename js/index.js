@@ -70,6 +70,19 @@ if (usuariosGuardados !== null) {
 } else {
     navLogin.setAttribute('href', './pages/login.html');
     navLogin.innerHTML = 'Iniciar Sesion';
+
+    setTimeout(() => {
+        Swal.fire({
+            icon: 'info',
+            title: 'Registrate!',
+            text: 'Registrate para acceder a nuestros cursos gratuitos!',
+            confirmButtonText: 'Registrarme',
+            preConfirm: () => {
+                // Redirige a la página HTML deseada
+                window.location.href = './pages/register.html';
+            }
+        })
+    }, 60000)
 }
 
 // ---------------------------- Dolares a pesos ----------------------------
@@ -99,6 +112,17 @@ submitDolar.addEventListener('click', (event) => {
     // Se recorre el array de los dolares y se realiza el calculo.
     if (!isNaN(cantidad)) {
         if (cantidad !== 0) {
+            // Alerta de conversion exitosa.
+            Toastify({
+                text: "Conversion Exitosa",
+                className: "info",
+                gravity: "bottom",
+                position: "right",
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #090979, #00d4ff)",
+                }
+            }).showToast();
             for (const dolar of dolares) {
                 resultadosDolares[dolar.nombre] = cantidad * dolar.valor;
                 alertaCompleta.innerHTML = '';
@@ -158,6 +182,17 @@ submitDivisas.addEventListener('click', (event) => {
     // Se recorre el array de las divisas y se realiza el calculo.
     if (!isNaN(cantidad)) {
         if (cantidad !== 0) {
+            // Alerta de conversion exitosa.
+            Toastify({
+                text: "Conversion Exitosa",
+                className: "info",
+                gravity: "bottom",
+                position: "right",
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #090979, #00d4ff)",
+                }
+            }).showToast();
             for (const divisa of divisas) {
                 resultadosDivisas[divisa.nombre] = cantidad * divisa.valor;
                 alertaCompleta.innerHTML = '';
@@ -217,6 +252,17 @@ submitPeso.addEventListener('click', (event) => {
     // Se recorre el array de los dolares y se realiza el calculo.
     if (!isNaN(cantidad)) {
         if (cantidad !== 0) {
+            // Alerta de conversion exitosa.
+            Toastify({
+                text: "Conversion Exitosa",
+                className: "info",
+                gravity: "bottom",
+                position: "right",
+                close: true,
+                style: {
+                    background: "linear-gradient(to right, #090979, #00d4ff)",
+                }
+            }).showToast();
             for (const dolar of dolares) {
                 resultadosPesos[dolar.nombre] = cantidad / dolar.valor;
                 alertaCompleta.innerHTML = '';
