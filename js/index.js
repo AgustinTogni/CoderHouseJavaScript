@@ -53,6 +53,7 @@ const valorDolarMEP = document.querySelector('#valorDolarMEP')
 const valorDolarMayorista = document.querySelector('#valorDolarMayorista')
 
 // SE REALIZO CON EURO COMO MONEDA BASE POR RESTRICCION DE LICENCIA GRATUITA (NO PERMITIA ARS).
+// LA API SOLAMENTE PERMITIA LLAMADAS CON PROTOCOLO HTTP, POR ESO NO SE UTILIZO HTTPS. SE DEBE EJECUTAR DE MANERA LOCAL.
 // Se declara una funcion para obtener las tasas de cambio de la API.
 function obtenerTasasDeCambio() {
     const apiKey = '768e5add5e1ae0d8f01f7c7741f1ad51';
