@@ -498,6 +498,10 @@ a {
         font-size: 1rem;
     }
 
+    .conversor__form h4 {
+        font-size: 1.125rem;
+    }
+
     .cursos__titulos h2 {
         font-size: 2rem;
     }
