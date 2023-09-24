@@ -271,6 +271,7 @@ a {
 .form__input--register {
     width: 100%;
     padding: 10px;
+    text-align: center;
     border-radius: 4px;
     margin-bottom: 16px;
     border-color: rgb(13, 71, 218);
@@ -317,4 +318,216 @@ a {
 .alertas {
     color: red;
     text-align: center;
+}
+
+
+/* ----- Media Queries Mobile ----- */
+
+@media screen and (min-width: 320px) {
+
+    .nav__img {
+        width: 45px;
+        height: 50px;
+    }
+
+    .carrusel__img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .aprende__div h1 {
+        font-size: 1.5rem;
+        width: 60%;
+        text-align: center;
+    }
+
+    .aprende__div img {
+        width: 250px;
+        height: 150px;
+    }
+
+    .aprende__div {
+        flex-direction: column;
+    }
+
+    .conversor h2 {
+        font-size: 1.5rem;
+        margin: 10px;
+    }
+    
+    .conversor h3 {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .conversor__form {
+        width: 290px;
+        padding: 50px;
+        margin-bottom: 50px;
+    }
+
+    .conversor__input {
+        margin-top: 5px;
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .conversor__submit {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .conversor__submit input {
+        padding: 6px 15px;
+        margin-bottom: 10px;
+        font-size: 0.7rem;
+    }
+
+    .cursos__titulos h2 {
+        font-size: 1.5rem;
+    }
+
+    .cursos__titulos h3 {
+        font-size: 1rem;
+    }
+
+    .cursos__div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form {
+        width: 290px;
+    }
+
+    .form h1 {
+        font-size: 2.5rem;
+    }
+    
+    .form h2 {
+        font-size: 1rem;
+    }
+
+    .form__div {
+        gap: 10px;
+        text-align: center;
+    }
+
+    .form__input {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .form__submit {
+        font-size: 1rem;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer__contacto {
+        display: flex;
+        flex-direction: row;
+    }
+
+}
+
+/* ----- Media Queries Desktop ----- */
+
+@media screen and (min-width: 1024px) {
+
+    .nav__img {
+        width: 65px;
+        height: 80px;
+    }
+
+    .carrusel__img {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .aprende__div {
+        flex-direction: row;
+    }
+    
+    .aprende__div h1 {
+        font-size: 3.5rem;
+        width: 40%;
+    }
+    
+    .aprende__div img {
+        width: 600px;
+        height: 450px;
+    }
+
+    .conversor h2 {
+        font-size: 2rem;
+        margin: 20px;
+    }
+    
+    .conversor h3 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .conversor__form {
+        flex-direction: column;
+        width: 400px;
+    }
+
+    .conversor__input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: -10px;
+    }
+    
+    .conversor__submit input {
+        padding: 8px 20px;
+        margin: 0px 5px 10px 5px;
+        font-size: 1rem;
+    }
+
+    .cursos__titulos h2 {
+        font-size: 2rem;
+    }
+
+    .cursos__titulos h3 {
+        font-size: 1.5rem;
+    }
+
+    .cursos__div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .form {
+        width: 400px;
+    }
+
+    .form h1 {
+        font-size: 3.5rem;
+    }
+    
+    .form h2 {
+        font-size: 1rem;
+    }
+
+    .footer {
+        flex-direction: row;
+    }
+
+    .footer img {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+    }
 }

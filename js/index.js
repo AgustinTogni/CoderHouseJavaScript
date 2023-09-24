@@ -79,7 +79,7 @@ function obtenerTasasDeCambio() {
 }
 
 // Se llama a la función para obtener las tasas de cambio.
-obtenerTasasDeCambio();
+// obtenerTasasDeCambio();
 
 // Se declara una funcion para darle el formato requerido a los resultados.
 function formatearNumero(numero) {
@@ -106,6 +106,7 @@ if (usuariosGuardados !== null) {
             title: 'Registrate!',
             text: 'Registrate para acceder a nuestros cursos gratuitos!',
             confirmButtonText: 'Registrarme',
+            confirmButtonColor: '#0000FF',
             preConfirm: () => {
                 // Redirige a la página HTML deseada
                 window.location.href = './pages/register.html';
