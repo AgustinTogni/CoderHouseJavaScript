@@ -79,7 +79,7 @@ function obtenerTasasDeCambio() {
 }
 
 // Se llama a la función para obtener las tasas de cambio.
-// obtenerTasasDeCambio();
+obtenerTasasDeCambio();
 
 // Se declara una funcion para darle el formato requerido a los resultados.
 function formatearNumero(numero) {
