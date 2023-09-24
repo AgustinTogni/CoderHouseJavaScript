@@ -370,7 +370,6 @@ a {
     .conversor__input {
         margin-top: 5px;
         font-size: 0.7rem;
-        text-align: center;
     }
 
     .conversor__submit {
@@ -486,7 +485,6 @@ a {
         width: 100%;
         padding: 10px;
         font-size: 1rem;
-        text-align: center;
         margin-top: -10px;
     }
     
