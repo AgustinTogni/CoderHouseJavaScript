@@ -271,7 +271,6 @@ a {
 .form__input--register {
     width: 100%;
     padding: 10px;
-    text-align: center;
     border-radius: 4px;
     margin-bottom: 16px;
     border-color: rgb(13, 71, 218);
@@ -414,12 +413,10 @@ a {
 
     .form__div {
         gap: 10px;
-        text-align: center;
     }
 
     .form__input {
         font-size: 0.9rem;
-        text-align: center;
     }
     
     .form__submit {
