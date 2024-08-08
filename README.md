@@ -6,7 +6,7 @@ Este proyecto se encuentra finalizado, sin embargo, puede sufrir algunas modific
 ### 📰Descripcion📰
 Este proyecto se desarrolla como trabajo final del curso "JavaScript" de CoderHouse. La idea de dicho proyecto es crear un sitio web que pueda ser utilizado como un conversor de divisas.
 
-#### 🔧Herramientas/lenguajes utilizados:
+#### 🔧Herramientas y tecnologias utilizadas:
 
 - Visual Studio Code
 	- HTML
